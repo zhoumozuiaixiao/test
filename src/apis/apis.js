@@ -5,7 +5,7 @@ import axios from 'axios'
 //定义Ip地址
 let IP = "http://127.0.0.1:5000";
 
-//login
+//登录页面
 export const postLogin = (user) =>{
         return axios.post(`${IP}/checklogin`,user)                                                                   
 }
@@ -13,5 +13,17 @@ export const postLogin = (user) =>{
 //显示列表
 export const showList = (user) =>{
           return axios.get(`${IP}/user/listUser`,user)
+}
+
+//分页
+export const pagesGet = (pageSize,currentPage) =>{      
+        return axios.get(`${IP}/user/queryPage`,{
+          params:{
+              pageSize,                          
+              currentPage
+        }
+
+     })
+        // return axios.get(`${IP}/user/queryPage`,{params:{pageSize:`${pageSize}`,currentPage:`${currentPage}`}})
 }
 

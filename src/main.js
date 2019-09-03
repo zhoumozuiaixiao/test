@@ -2,15 +2,20 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './utils/axiosUtil';
+
 
 //引入elementUI组件
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 //引入全局样式
 import './assets/styles/commones.css'
+//引入拦截器
 
+//引入axios
 //注册
 Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 
 //全局路由守卫
